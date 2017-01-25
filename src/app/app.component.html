@@ -1,0 +1,50 @@
+<div class="page-container">
+   <div class="left-content">
+	   <div class="mother-grid-inner">
+
+
+      <app-nav-top *ngIf="isLoggedIn" > </app-nav-top>
+<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-main").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop();
+				if(scrollpos >=navoffeset){
+					$(".header-main").addClass("fixed");
+				}else{
+					$(".header-main").removeClass("fixed");
+				}
+			 });
+
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+<!--inner block start here-->
+
+
+
+
+
+
+<div class="inner-block">
+
+
+<router-outlet> </router-outlet>
+
+<!--climate end here-->
+</div>
+<!--inner block end here-->
+<!--copy rights start here-->
+<div class="copyrights">
+	 <p>© 2016 EppMe. All Rights Reserved  </p>
+</div>
+<!--COPY rights end here-->
+</div>
+</div>
+<!--slider menu-->
+<app-sidebar-menu  *ngIf="isLoggedIn" ></app-sidebar-menu>
+
+
+	<div class="clearfix"> </div>
+</div>
